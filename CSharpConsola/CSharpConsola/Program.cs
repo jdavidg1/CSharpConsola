@@ -11,10 +11,17 @@ namespace CSharpConsola
         static void Main(string[] args)  //El método principal se llama main, los elementos son referenciados en la parte superior
             //El espacio de nombres es donde está ubicada una clase
         {
-            int numeroUno = int.Parse(Console.ReadLine());    //metodo parse, el cual está dentro de la clase int y por eso se llama primero
-            int numeroDos = int.Parse(Console.ReadLine());
-            int resultado = Matematicas.Suma(numeroUno, numeroDos);
-            Console.WriteLine($"Resultado: {resultado}");
+            /*  int numeroUno = int.Parse(Console.ReadLine());    //metodo parse, el cual está dentro de la clase int y por eso se llama primero
+              int numeroDos = int.Parse(Console.ReadLine());
+              int resultado = Matematicas.Suma(numeroUno, numeroDos);
+              Console.WriteLine($"Resultado: {resultado}");*/
+
+            CuentaBancaria cuentaUno = new CuentaBancaria(); // Crear una instancia de la CuentaBancaria
+
+            cuentaUno.Balance = -2000;
+
+            Console.WriteLine($"El valor de balance es: {cuentaUno.Balance}"); // Porque la propiedad Balance si es publica a diferencia de balance
+               
             Console.ReadLine();
 
          }
