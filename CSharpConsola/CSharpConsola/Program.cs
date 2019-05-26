@@ -13,18 +13,49 @@ namespace CSharpConsola
         {
             int numeroUno = int.Parse(Console.ReadLine());    //metodo parse, el cual está dentro de la clase int y por eso se llama primero
             int numeroDos = int.Parse(Console.ReadLine());
-            int resultado = Suma(numeroUno, numeroDos);
+            int resultado = Matematicas.Suma(numeroUno, numeroDos);
             Console.WriteLine($"Resultado: {resultado}");
             Console.ReadLine();
 
          }
+                      
+    }
 
-        static int Suma (int n1, int n2)   //Definición de método
+    class Matematicas   // Definición de clase matemáticas, cada clase resuevle un problema
+    {
 
+        public static int Suma(int n1, int n2)   //Definición de método. El public permite que sea accesible fuera de la clase
+        {
+            return n1 + n2;
+        }
+
+        public static int Resta(int n1, int n2)   //Definición de método
+        {
+            return n1 - n2;
+        }
+
+        public static int Multiplicacion(int n1, int n2)   //Definición de método
+        {
+            return n1 * n2;
+        }
+
+        public static int Division(int n1, int n2)   //Definición de método
+        {
+            return n1 / n2;
+        }
+      
+    }
+
+    class Geometria:Matematicas   //Hereda las propiedades de matemáticas
+    {
+
+        public static int AreaCuadrado (int lado)
         {
 
-            return n1 + n2;
+            return Multiplicacion(lado, lado);
 
         }
+
     }
+
 }
