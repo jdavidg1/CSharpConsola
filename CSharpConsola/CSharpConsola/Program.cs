@@ -17,15 +17,27 @@ namespace CSharpConsola
               Console.WriteLine($"Resultado: {resultado}");*/
 
             CuentaBancaria cuentaUno = new CuentaBancaria(); // Crear una instancia de la CuentaBancaria
-
             cuentaUno.Balance = -2000;
 
-            Console.WriteLine($"El valor de balance es: {cuentaUno.Balance}"); // Porque la propiedad Balance si es publica a diferencia de balance
-               
+            CuentaBancariaKids cuentaDos = new CuentaBancariaKids(); // Crear una instancia de la CuentaBancaria
+            cuentaDos.Balance = 2000;
+
+            AgregarBalance(cuentaUno, 3000);
+            AgregarBalance(cuentaDos, 3000);
+
+
             Console.ReadLine();
 
          }
-                      
+            
+        static void AgregarBalance(ICuentaBancaria cuentaBancaria, double balance)
+        {
+
+            cuentaBancaria.AgregarABalance(balance);
+            Console.WriteLine($"El valor de balance es: {cuentaBancaria.Balance}"); // Porque la propiedad Balance si es publica a diferencia de balance
+
+        }
+
     }
 
     class Matematicas   // Definición de clase matemáticas, cada clase resuevle un problema
