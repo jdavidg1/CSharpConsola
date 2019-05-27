@@ -25,7 +25,7 @@ namespace CSharpConsola
             AgregarBalance(cuentaUno, 3000);
             AgregarBalance(cuentaDos, 3000);
 
-
+        
             Console.ReadLine();
 
          }
