@@ -11,21 +11,8 @@ namespace CSharpConsola
         static void Main(string[] args)  //El método principal se llama main, los elementos son referenciados en la parte superior
             //El espacio de nombres es donde está ubicada una clase
         {
-            /*  int numeroUno = int.Parse(Console.ReadLine());    //metodo parse, el cual está dentro de la clase int y por eso se llama primero
-              int numeroDos = int.Parse(Console.ReadLine());
-              int resultado = Matematicas.Suma(numeroUno, numeroDos);
-              Console.WriteLine($"Resultado: {resultado}");*/
+          
 
-            CuentaBancaria cuentaUno = new CuentaBancaria(); // Crear una instancia de la CuentaBancaria
-            cuentaUno.Balance = -2000;
-
-            CuentaBancariaKids cuentaDos = new CuentaBancariaKids(); // Crear una instancia de la CuentaBancaria
-            cuentaDos.Balance = 2000;
-
-            AgregarBalance(cuentaUno, 3000);
-            AgregarBalance(cuentaDos, 3000);
-
-        
             Console.ReadLine();
 
          }
@@ -48,7 +35,20 @@ namespace CSharpConsola
             return n1 + n2;
         }
 
-        public static int Resta(int n1, int n2)   //Definición de método
+        public static int Suma(int[] valores)
+        {
+            int resultado = 0;
+
+            foreach(int i in valores)
+            {
+                resultado += i;
+            }
+            return resultado;
+
+        }
+
+
+        public virtual int Resta(int n1, int n2)   //Definición de método
         {
             return n1 - n2;
         }
@@ -73,6 +73,11 @@ namespace CSharpConsola
 
             return Multiplicacion(lado, lado);
 
+        }
+
+        public override int Resta(int n1, int n2)
+        {
+            return n2 - n1;
         }
 
     }
